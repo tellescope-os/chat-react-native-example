@@ -16,32 +16,36 @@ import {
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator, StackNavigationProp } from '@react-navigation/stack';
 import { GestureHandlerRootView } from "react-native-gesture-handler"
- 
-import { 
-  Flex,
-  Logout,
-  WithTheme,
-} from "@tellescope/react-components"
-import {
-  useSession, 
-  useEnduserSession, 
-  WithSession,
-  WithEnduserSession,
-  UserLogin, 
-  EnduserLogin, 
-} from "@tellescope/react-components/lib/esm/authentication"
-import { EnduserProvider } from "@tellescope/react-components/lib/esm/enduser_state"
-import { UserProvider } from "@tellescope/react-components/lib/esm/user_state"
-import { useChats, useChatRooms } from "@tellescope/react-components/lib/esm/state"
-import { BottomNavigation } from "@tellescope/react-components/lib/esm/mui"
-import { EndusersConversations, Messages, SendMessage } from "@tellescope/chat/lib/esm/chat"
-
 import {
   REACT_APP_TELLESCOPE_BUSINESS_ID as businessId,
   REACT_APP_TELLESCOPE_API_ENDPOINT as host,
   REACT_APP_EXAMPLE_ENDUSER_EMAIL as enduserEmail,
   REACT_APP_EXAMPLE_ENDUSER_PASSWORD as enduserPassword,
-} from "@env"
+} from "@env" 
+
+import { 
+  Flex,
+  Logout,
+  WithTheme,
+  EnduserProvider,
+  UserProvider,
+  useChats, 
+  useChatRooms,
+  useSession, 
+  useEnduserSession, 
+  WithSession,
+  WithEnduserSession,
+  UserLogin, 
+  EnduserLogin,
+  useResolvedSession, 
+  BottomNavigation, 
+  Typography,
+} from "@tellescope/react-components"
+import { Conversations, Messages, SendMessage, user_display_name } from "@tellescope/chat/lib/esm/chat"
+
+
+import { ChatRoom, UserDisplayInfo } from '@tellescope/types-client';
+import { SessionType } from '@tellescope/types-utilities';
 
 if (!businessId) {
   console.log(businessId)
@@ -56,7 +60,6 @@ const Routes = {
   User: undefined,
   Enduser: undefined,
 }
-type ViewType = '' | 'user' | 'enduser'
 const App = () => { 
   return (
     <WithTheme>
@@ -90,11 +93,11 @@ const Selector = () => {
   )
 }
 
-const SelectEnduserConversation = () => {
-  const session = useEnduserSession()
-  const [, { updateElement: updateRoom }] = useChatRooms('enduser')
+const ViewConversation = () => {
+  const session = useResolvedSession()
+  const [, { updateElement: updateRoom }] = useChatRooms(session.type)
   const [selectedRoom, setSelectedRoom] = useState('')
-  const [messages, { createElement: addMessage }] = useChats(selectedRoom, 'enduser')
+  const [messages, { createElement: addMessage }] = useChats(selectedRoom, session.type)
 
   if (selectedRoom) return (
     <Flex column flex={1}>
@@ -105,7 +108,7 @@ const SelectEnduserConversation = () => {
         />
       </Flex>
       <Flex style={{ margin: 5 }}>
-        <SendMessage type="enduser" roomId={selectedRoom}
+        <SendMessage roomId={selectedRoom} type={session.type}
           onNewMessage={m => { 
             addMessage(m)
             updateRoom(selectedRoom, { recentMessage: m.message, recentSender: m.senderId ?? '' })
@@ -117,14 +120,11 @@ const SelectEnduserConversation = () => {
 
   return (
     <Flex flex={1}>
-      <EndusersConversations 
-        enduserId={session.userInfo.id}
-        selectedRoom={selectedRoom}
-        onRoomSelect={setSelectedRoom}
-      />
+      <CustomRoomSelect selectedRoom={selectedRoom} setSelectedRoom={setSelectedRoom} type={session.type} />
     </Flex>
   )
 }
+
 
 const EnduserApp = () => {
   const session = useEnduserSession()
@@ -140,7 +140,7 @@ const EnduserApp = () => {
           key: 'chat',
           title: "Chat",
           icon: 'chat',
-          Component: SelectEnduserConversation,
+          Component: ViewConversation,
         },
         {
           key: 'logout',
@@ -166,39 +166,50 @@ const EnduserAppRouter = () => {
   )
 }
 
-const SelectUserConversation = () => {
-  const session = useSession()
-  const [, { updateElement: updateRoom }] = useChatRooms('enduser')
-  const [selectedRoom, setSelectedRoom] = useState('')
-  const [messages, { createElement: addMessage }] = useChats(selectedRoom, 'enduser')
+/* Assuming 1-1 user-enduser chat room */
+const resolve_chat_room_name = (room: ChatRoom, displayInfo: { [index: string]: UserDisplayInfo }, userType: SessionType, currentUserId: string) => {
+  if (room.recentSender !== currentUserId) {
+    return user_display_name(displayInfo[room.recentSender ?? ''])
+  }
+  if (userType === 'user') {
+    return user_display_name(displayInfo[room?.enduserIds?.[0] ?? room.creator ?? ''])
+  }
+  if (userType === 'enduser') {
+    console.log(room.recentSender, room.creator, displayInfo[room.creator])
+    return user_display_name(displayInfo[room?.userIds?.[0] ?? room.creator ?? ''])
+  }
+  return ''
+}
 
-  if (selectedRoom) return (
-    <Flex column flex={1}>
-      <Flex>
-        <Messages
-          messages={messages}
-          chatUserId={session.userInfo.id}
-        />
-      </Flex>
-      <Flex style={{ marginRight: 5, marginLeft: 5 }}>
-        <SendMessage type="user" roomId={selectedRoom}
-          onNewMessage={m => { 
-            addMessage(m)
-            updateRoom(selectedRoom, { recentMessage: m.message, recentSender: m.senderId ?? '' })
-          }}
-        /> 
-      </Flex>
-    </Flex>
-  )
+interface WithSessionType { type: SessionType }
+interface RoomSelector { selectedRoom: string, setSelectedRoom: (s: string) => void }
+const CustomRoomSelect = ({ type, selectedRoom, setSelectedRoom } : WithSessionType & RoomSelector) => {
+  const [loadingRooms] = useChatRooms(type)
+  const session = useResolvedSession()
 
   return (
-    <Flex flex={1}>
-      <EndusersConversations 
-        enduserId={session.userInfo.id}
-        selectedRoom={selectedRoom}
-        onRoomSelect={setSelectedRoom}
-      />
-    </Flex>
+    <Conversations rooms={loadingRooms} selectedRoom={selectedRoom} onRoomSelect={setSelectedRoom} 
+      style={{ backgroundColor: 'white' }}
+      PreviewComponent={({ onClick, selected, room, displayInfo }) => (
+        <Flex flex={1} column onClick={() => !selected && onClick?.(room)} 
+          style={{ 
+            padding: 5, 
+            cursor: 'pointer',
+            backgroundColor: selected ? '#999999' : undefined,
+            borderBottom: '1px solid black',
+          }}
+        >
+        <Typography>
+          {resolve_chat_room_name(room, displayInfo, type, session.userInfo.id)}
+        </Typography>
+  
+        <Typography>
+          {room.recentMessage ?? room.title}
+        </Typography>
+        </Flex>
+      )
+    }
+    />
   )
 }
 
@@ -213,7 +224,7 @@ const UserApp = () => {
           key: 'chat',
           title: "Chat",
           icon: 'chat',
-          Component: SelectUserConversation,
+          Component: ViewConversation,
         },
         {
           key: 'logout',
