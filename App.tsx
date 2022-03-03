@@ -29,19 +29,19 @@ import {
   WithTheme,
   EnduserProvider,
   UserProvider,
-  useChats, 
-  useChatRooms,
-  useSession, 
   useEnduserSession, 
   WithSession,
   WithEnduserSession,
   UserLogin, 
   EnduserLogin,
-  useResolvedSession, 
   BottomNavigation, 
   Typography,
+  useChats, 
+  useSession, 
+  useChatRooms,
+  useResolvedSession, 
 } from "@tellescope/react-components"
-import { Conversations, Messages, SendMessage, user_display_name } from "@tellescope/chat/lib/esm/chat"
+import { Conversations, Messages, SendMessage, user_display_name } from "@tellescope/chat"
 
 
 import { ChatRoom, UserDisplayInfo } from '@tellescope/types-client';

@@ -1857,53 +1857,53 @@
   dependencies:
     "defer-to-connect" "^1.0.1"
 
-"@tellescope/chat@^0.0.48":
-  "integrity" "sha512-IlCBFq/3NkhXr8W5AbLKlt436RqdW3CKpD/214Q0e0/K1+VyuhU6YZCXb6KE2QT9W/h7oUCbxc4uOWflxivCQw=="
-  "resolved" "https://registry.npmjs.org/@tellescope/chat/-/chat-0.0.48.tgz"
-  "version" "0.0.48"
+"@tellescope/chat@^0.0.49":
+  "integrity" "sha512-VuRcrMqVy+eMRvMV52B2xDRnw8HD5ZGC5y2y2vjcZjNaOSEJg/FY0hqVyToxxDZTum6DRX0kXabO2F0DSoaPxw=="
+  "resolved" "https://registry.npmjs.org/@tellescope/chat/-/chat-0.0.49.tgz"
+  "version" "0.0.49"
   dependencies:
     "@emotion/react" "^11.4.1"
     "@emotion/styled" "^11.3.0"
     "@fontsource/roboto" "^4.5.1"
     "@mui/icons-material" "^5.0.1"
     "@mui/material" "^5.0.2"
-    "@tellescope/constants" "^0.0.48"
-    "@tellescope/react-components" "^0.0.48"
-    "@tellescope/sdk" "^0.0.48"
-    "@tellescope/types-client" "^0.0.48"
-    "@tellescope/types-models" "^0.0.48"
-    "@tellescope/types-utilities" "^0.0.48"
-    "@tellescope/utilities" "^0.0.48"
+    "@tellescope/constants" "^0.0.49"
+    "@tellescope/react-components" "^0.0.49"
+    "@tellescope/sdk" "^0.0.49"
+    "@tellescope/types-client" "^0.0.49"
+    "@tellescope/types-models" "^0.0.49"
+    "@tellescope/types-utilities" "^0.0.49"
+    "@tellescope/utilities" "^0.0.49"
     "@typescript-eslint/eslint-plugin" "^4.33.0"
     "@typescript-eslint/parser" "^4.33.0"
     "eslint" "^7.32.0"
     "eslint-plugin-react" "^7.26.1"
     "nodemon" "^2.0.13"
 
-"@tellescope/constants@^0.0.48":
-  "integrity" "sha512-G/smg9DWSHZTC7uWIGu+NfXhx3W69mWpcmFMbu3ZX2BjlaHUTad7VW94gpequbXPb82WDkV20NSt8sC/w9DKyg=="
-  "resolved" "https://registry.npmjs.org/@tellescope/constants/-/constants-0.0.48.tgz"
-  "version" "0.0.48"
+"@tellescope/constants@^0.0.49":
+  "integrity" "sha512-iz6PvytVCpj5apNbcnrq0PkAzvjCEFx2QQlqr+NK4QCMaxrtNgbUQvU1xu+2RQ2hHdi40GPsItOXNfgRqMZB1Q=="
+  "resolved" "https://registry.npmjs.org/@tellescope/constants/-/constants-0.0.49.tgz"
+  "version" "0.0.49"
   dependencies:
-    "@tellescope/types-models" "^0.0.48"
-    "@tellescope/types-utilities" "^0.0.48"
+    "@tellescope/types-models" "^0.0.49"
+    "@tellescope/types-utilities" "^0.0.49"
 
-"@tellescope/react-components@^0.0.48":
-  "integrity" "sha512-OU1gOONur2PJ17MvZC5mOGdMu0EylC/kSbLFQi5s73sreN8cSN9glT149M+U+NxyVr/7upRQbNMgKPuJRcBY/g=="
-  "resolved" "https://registry.npmjs.org/@tellescope/react-components/-/react-components-0.0.48.tgz"
-  "version" "0.0.48"
+"@tellescope/react-components@^0.0.49":
+  "integrity" "sha512-LZkI+4XqoKPDZPTOXGktMIznDj4qy4AyAUGosQll7Kjjh0/ww7cTM7QdErZci1ST0b3pwjtsV0d31Tv9zooUfw=="
+  "resolved" "https://registry.npmjs.org/@tellescope/react-components/-/react-components-0.0.49.tgz"
+  "version" "0.0.49"
   dependencies:
     "@emotion/react" "^11.4.1"
     "@emotion/styled" "^11.3.0"
     "@mui/icons-material" "^5.0.1"
     "@mui/material" "^5.0.2"
     "@reduxjs/toolkit" "^1.6.2"
-    "@tellescope/constants" "^0.0.48"
-    "@tellescope/sdk" "^0.0.48"
-    "@tellescope/types-client" "^0.0.48"
-    "@tellescope/types-models" "^0.0.48"
-    "@tellescope/types-utilities" "^0.0.48"
-    "@tellescope/utilities" "^0.0.48"
+    "@tellescope/constants" "^0.0.49"
+    "@tellescope/sdk" "^0.0.49"
+    "@tellescope/types-client" "^0.0.49"
+    "@tellescope/types-models" "^0.0.49"
+    "@tellescope/types-utilities" "^0.0.49"
+    "@tellescope/utilities" "^0.0.49"
     "@typescript-eslint/eslint-plugin" "^4.33.0"
     "@typescript-eslint/parser" "^4.33.0"
     "css-to-react-native" "^3.0.0"
@@ -1918,32 +1918,32 @@
     "react-redux" "^7.2.6"
     "yup" "^0.32.10"
 
-"@tellescope/schema@^0.0.48":
-  "integrity" "sha512-tp6YibrbmwGUZ8VTf73PVLSx+Gb9BAvUXd9BJRlCxyEcxmRenJY35WK5RILSHK/nvf7vYcMPcBgb2ccC5tvm2Q=="
-  "resolved" "https://registry.npmjs.org/@tellescope/schema/-/schema-0.0.48.tgz"
-  "version" "0.0.48"
+"@tellescope/schema@^0.0.49":
+  "integrity" "sha512-kuUxI4NxOxgOYX947hcOfIbI/cOYIS0cBVzBpRnMyAJZkyQaBF4PRyQbLurMyU6UKcwhSdwTlxyPnCj/xOhR7g=="
+  "resolved" "https://registry.npmjs.org/@tellescope/schema/-/schema-0.0.49.tgz"
+  "version" "0.0.49"
   dependencies:
-    "@tellescope/constants" "^0.0.48"
-    "@tellescope/types-client" "^0.0.48"
-    "@tellescope/types-models" "^0.0.48"
-    "@tellescope/types-server" "^0.0.48"
-    "@tellescope/types-utilities" "^0.0.48"
-    "@tellescope/validation" "^0.0.48"
+    "@tellescope/constants" "^0.0.49"
+    "@tellescope/types-client" "^0.0.49"
+    "@tellescope/types-models" "^0.0.49"
+    "@tellescope/types-server" "^0.0.49"
+    "@tellescope/types-utilities" "^0.0.49"
+    "@tellescope/validation" "^0.0.49"
     "validator" "^13.1.17"
 
-"@tellescope/sdk@^0.0.48":
-  "integrity" "sha512-VkLEq7Tr891vK07us4BVUzxr2j9PBQx0wSFdh2KunwK7jKDGfJT1aZo7O46rh02rgPhiAhwkYOlWtEX1WIkjLQ=="
-  "resolved" "https://registry.npmjs.org/@tellescope/sdk/-/sdk-0.0.48.tgz"
-  "version" "0.0.48"
+"@tellescope/sdk@^0.0.49":
+  "integrity" "sha512-Wv1USqNWYQdP8zltWGnnpM0uBdPOYTqsdvgzM/KUpHMzoL9r5baZwoFyF2p39LArLn/xHQM/kL1/b2G0FE3P7A=="
+  "resolved" "https://registry.npmjs.org/@tellescope/sdk/-/sdk-0.0.49.tgz"
+  "version" "0.0.49"
   dependencies:
-    "@tellescope/constants" "^0.0.48"
-    "@tellescope/schema" "^0.0.48"
-    "@tellescope/testing" "^0.0.48"
-    "@tellescope/types-client" "^0.0.48"
-    "@tellescope/types-models" "^0.0.48"
-    "@tellescope/types-utilities" "^0.0.48"
-    "@tellescope/utilities" "^0.0.48"
-    "@tellescope/validation" "^0.0.48"
+    "@tellescope/constants" "^0.0.49"
+    "@tellescope/schema" "^0.0.49"
+    "@tellescope/testing" "^0.0.49"
+    "@tellescope/types-client" "^0.0.49"
+    "@tellescope/types-models" "^0.0.49"
+    "@tellescope/types-utilities" "^0.0.49"
+    "@tellescope/utilities" "^0.0.49"
+    "@tellescope/validation" "^0.0.49"
     "axios" "^0.21.1"
     "dotenv" "^14.2.0"
     "express" "^4.17.1"
@@ -1951,51 +1951,51 @@
     "socket.io-client" "^4.2.0"
     "source-map-support" "^0.5.20"
 
-"@tellescope/testing@^0.0.48":
-  "integrity" "sha512-ysDY0Heuvv4qVvXWaFMMSLqHk9Ec/mtzbYtRLyw/H4iCXSu66o9O5ZV0xFzJzJPzspjp2ewVUXoeiHrkFUgatg=="
-  "resolved" "https://registry.npmjs.org/@tellescope/testing/-/testing-0.0.48.tgz"
-  "version" "0.0.48"
+"@tellescope/testing@^0.0.49":
+  "integrity" "sha512-oSpkmFJSCQZyALtWPRJNPyj63lPsoSyEnBo1IzCFZdEVwOGAim4yYsP6FBcsizapfVabhm7QVHvn44PZucu6JA=="
+  "resolved" "https://registry.npmjs.org/@tellescope/testing/-/testing-0.0.49.tgz"
+  "version" "0.0.49"
   dependencies:
-    "@tellescope/types-utilities" "^0.0.48"
+    "@tellescope/types-utilities" "^0.0.49"
 
-"@tellescope/types-client@^0.0.48":
-  "integrity" "sha512-LnzwhXGDapQfbjfnIPB7yR5anaFoCjNlDr/G0Sz1ks/gzOLKL+S3Edu5OTkQLgG1RPznVOy9ksreeEB/OEB7Tg=="
-  "resolved" "https://registry.npmjs.org/@tellescope/types-client/-/types-client-0.0.48.tgz"
-  "version" "0.0.48"
+"@tellescope/types-client@^0.0.49":
+  "integrity" "sha512-pveTsZqUVerMgAfmCoEeXd2VNdt+TICVxiny9WXmxcYuh0qzqG6rqOijEz4xAmf6rGOUMRFqgPQfFSehjt2jzg=="
+  "resolved" "https://registry.npmjs.org/@tellescope/types-client/-/types-client-0.0.49.tgz"
+  "version" "0.0.49"
 
-"@tellescope/types-models@^0.0.48":
-  "integrity" "sha512-p/06dn5Hl8qpeCWiFSSbVpqU25Sdz7z3+1+NoRWYJz+e50HOHIoytevgAlrhHbttGaK9+0vWbVmCwLWneeWjjg=="
-  "resolved" "https://registry.npmjs.org/@tellescope/types-models/-/types-models-0.0.48.tgz"
-  "version" "0.0.48"
+"@tellescope/types-models@^0.0.49":
+  "integrity" "sha512-YM/vARdmS9etqE8JYhaIYjbfPgRrUZc9feEKz1JnTC1uLopQPCi31n9wIFYoj86GxJIlPJ6jcdw8rz5vAkymcg=="
+  "resolved" "https://registry.npmjs.org/@tellescope/types-models/-/types-models-0.0.49.tgz"
+  "version" "0.0.49"
 
-"@tellescope/types-server@^0.0.48":
-  "integrity" "sha512-OH8gAsPqdQwfI08BOFOUlXqhgIfND6zWeofsY+RfjOOH5ev/xRpcwwiFzjA08WmcbBaCIOfLi5HtZznzJ4bLkg=="
-  "resolved" "https://registry.npmjs.org/@tellescope/types-server/-/types-server-0.0.48.tgz"
-  "version" "0.0.48"
+"@tellescope/types-server@^0.0.49":
+  "integrity" "sha512-JqJPILzuU6toGRtH4xcJcU+5kbFdKeZFVKfNB/nQEW5XIjbifdyhHr/Fca3KxU3e8RPMG6vphQtUoOimR20TQA=="
+  "resolved" "https://registry.npmjs.org/@tellescope/types-server/-/types-server-0.0.49.tgz"
+  "version" "0.0.49"
 
-"@tellescope/types-utilities@^0.0.48":
-  "integrity" "sha512-iiOxAfg1Ln9B681jZurEFunsvH2KNO8woUPyKrGrNK+KTomATns3E2yJQ3uBx5wDOE7zrKIQmZITOym4DJmOXA=="
-  "resolved" "https://registry.npmjs.org/@tellescope/types-utilities/-/types-utilities-0.0.48.tgz"
-  "version" "0.0.48"
+"@tellescope/types-utilities@^0.0.49":
+  "integrity" "sha512-f0ERWB/qBFqMIV+njqB0U2ATeWIgBSLi8cHtQIJEjJnQBip+GbwRXpj6J48LwFodmZZq7s4EXik4GaerouRn4Q=="
+  "resolved" "https://registry.npmjs.org/@tellescope/types-utilities/-/types-utilities-0.0.49.tgz"
+  "version" "0.0.49"
 
-"@tellescope/utilities@^0.0.48":
-  "integrity" "sha512-pdFRlm0IQ+p03qv9vUomEtqhechq4TjVvVIZYXW7rty/ddY6NYH+eoAWLtQZb1dgR/AZEbhcUiVgMAh78F2UPQ=="
-  "resolved" "https://registry.npmjs.org/@tellescope/utilities/-/utilities-0.0.48.tgz"
-  "version" "0.0.48"
+"@tellescope/utilities@^0.0.49":
+  "integrity" "sha512-vFxzRqSJtBeMvXBHI0E33zmuURASbqowTjbw5ASCkCurtggxVMRs0sD80mU/NuX79Urf3Q4TC5gJfxsw9O0hwg=="
+  "resolved" "https://registry.npmjs.org/@tellescope/utilities/-/utilities-0.0.49.tgz"
+  "version" "0.0.49"
   dependencies:
-    "@tellescope/types-models" "^0.0.48"
+    "@tellescope/types-models" "^0.0.49"
     "mongodb" "^4.1.2"
 
-"@tellescope/validation@^0.0.48":
-  "integrity" "sha512-Et2tC3rX0gloQYtp2TM/oU6AXXZorGVYGse/QzJlNJ/O6tk6eRZpTsGQgTYb02VINIzYNteFEjwU3CZDRswFgg=="
-  "resolved" "https://registry.npmjs.org/@tellescope/validation/-/validation-0.0.48.tgz"
-  "version" "0.0.48"
+"@tellescope/validation@^0.0.49":
+  "integrity" "sha512-6XYi5rnkFxgpc6CBVQZOMLSYp0tpFo+H1hQ4QroPWbxIqNTfgEMbl3zCqecVLJd/YJ9QqEnhhff7Z+BJNSDItg=="
+  "resolved" "https://registry.npmjs.org/@tellescope/validation/-/validation-0.0.49.tgz"
+  "version" "0.0.49"
   dependencies:
-    "@tellescope/constants" "^0.0.48"
-    "@tellescope/types-client" "^0.0.48"
-    "@tellescope/types-models" "^0.0.48"
-    "@tellescope/types-utilities" "^0.0.48"
-    "@tellescope/utilities" "^0.0.48"
+    "@tellescope/constants" "^0.0.49"
+    "@tellescope/types-client" "^0.0.49"
+    "@tellescope/types-models" "^0.0.49"
+    "@tellescope/types-utilities" "^0.0.49"
+    "@tellescope/utilities" "^0.0.49"
     "validator" "^13.5.2"
 
 "@tootallnate/once@1":
@@ -6504,7 +6504,7 @@
   dependencies:
     "minimist" "^1.2.5"
 
-"mongodb-connection-string-url@^2.4.1":
+"mongodb-connection-string-url@^2.5.2":
   "integrity" "sha512-tWDyIG8cQlI5k3skB6ywaEA5F9f5OntrKKsT/Lteub2zgwSUlhqEN2inGgBTm8bpYJf8QYBdA/5naz65XDpczA=="
   "resolved" "https://registry.npmjs.org/mongodb-connection-string-url/-/mongodb-connection-string-url-2.5.2.tgz"
   "version" "2.5.2"
@@ -6513,14 +6513,14 @@
     "whatwg-url" "^11.0.0"
 
 "mongodb@^4.1.2":
-  "integrity" "sha512-1hPhutJj6yxxu0ymwsO0uEimTo+QTh3oQP6YHxmLneBFBOGydYFdnmDDuLiGWimAlMdRN9WuDXY+JGp47aeOwA=="
-  "resolved" "https://registry.npmjs.org/mongodb/-/mongodb-4.4.0.tgz"
-  "version" "4.4.0"
+  "integrity" "sha512-IAD3nFtCR4s22vi5qjqkCBnuyDDrOW8WVSSmgHquOvGaP1iTD+XpC5tr8wAUbZ2EeZkaswwBKQFHDvl4qYcKqQ=="
+  "resolved" "https://registry.npmjs.org/mongodb/-/mongodb-4.4.1.tgz"
+  "version" "4.4.1"
   dependencies:
     "bson" "^4.6.1"
     "denque" "^2.0.1"
-    "mongodb-connection-string-url" "^2.4.1"
-    "socks" "^2.6.1"
+    "mongodb-connection-string-url" "^2.5.2"
+    "socks" "^2.6.2"
   optionalDependencies:
     "saslprep" "^1.0.3"
 
@@ -8109,7 +8109,7 @@
     "@socket.io/component-emitter" "~3.0.0"
     "debug" "~4.3.1"
 
-"socks@^2.6.1":
+"socks@^2.6.2":
   "integrity" "sha512-zDZhHhZRY9PxRruRMR7kMhnf3I8hDs4S3f9RecfnGxvcBHQcKcIH/oUcEWffsfl1XxdYlA7nnlGbbTvPz9D8gA=="
   "resolved" "https://registry.npmjs.org/socks/-/socks-2.6.2.tgz"
   "version" "2.6.2"
