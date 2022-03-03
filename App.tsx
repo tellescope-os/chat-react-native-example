@@ -199,6 +199,11 @@ const CustomRoomSelect = ({ type, selectedRoom, setSelectedRoom } : WithSessionT
             borderBottom: '1px solid black',
           }}
         >
+
+        {!room.recentMessage &&
+          <Typography>New Chat Room</Typography>
+        }
+
         <Typography>
           {resolve_chat_room_name(room, displayInfo, type, session.userInfo.id)}
         </Typography>

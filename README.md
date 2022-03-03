@@ -43,6 +43,14 @@ npm run create-enduser
 ```
 ## Running
 
+#### `Chat Room`
+You will need a test chat room to send messages. 
+You can run the following script to create a room with your sample enduser
+```
+npm run create-chat-room
+```
+
+
 ### `npm start`
 Launches Metro, run React Native code for app
 
