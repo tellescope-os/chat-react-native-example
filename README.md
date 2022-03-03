@@ -1,9 +1,5 @@
 # Tellescope Chat Demo (React-Native)
 
-## Requirements
-Use the [web chat example](https://github.com/tellescope-os/chat-react-example) \
-to create a chat room and send messages from your User account. 
-
 ## Setup
 
 ### `React Native`
