@@ -98,10 +98,6 @@ const ViewConversation = () => {
   const [selectedRoom, setSelectedRoom] = useState('')
   const [messages] = useChats(selectedRoom, session.type)
 
-  const handleNewMessage = () => {
-    
-  }
-
   if (selectedRoom) return (
     <Flex column flex={1}>
       <Flex flex={1}>
