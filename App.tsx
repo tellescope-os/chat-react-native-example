@@ -48,7 +48,6 @@ import { ChatRoom, UserDisplayInfo } from '@tellescope/types-client';
 import { SessionType } from '@tellescope/types-utilities';
 
 if (!businessId) {
-  console.log(businessId)
   console.error('No businessId set. Enduser authentication will not work.')
   process.exit()
 }
@@ -95,9 +94,13 @@ const Selector = () => {
 
 const ViewConversation = () => {
   const session = useResolvedSession()
-  const [, { updateElement: updateRoom }] = useChatRooms(session.type)
+  const [, { updateLocalElement: updateLocalRoom }] = useChatRooms(session.type)
   const [selectedRoom, setSelectedRoom] = useState('')
-  const [messages, { createElement: addMessage }] = useChats(selectedRoom, session.type)
+  const [messages] = useChats(selectedRoom, session.type)
+
+  const handleNewMessage = () => {
+    
+  }
 
   if (selectedRoom) return (
     <Flex column flex={1}>
@@ -110,8 +113,7 @@ const ViewConversation = () => {
       <Flex style={{ margin: 5 }}>
         <SendMessage roomId={selectedRoom} type={session.type}
           onNewMessage={m => { 
-            addMessage(m)
-            updateRoom(selectedRoom, { recentMessage: m.message, recentSender: m.senderId ?? '' })
+            updateLocalRoom(selectedRoom, { recentMessage: m.message, recentSender: m.senderId ?? '' })
           }}
         /> 
       </Flex>
@@ -166,7 +168,8 @@ const EnduserAppRouter = () => {
   )
 }
 
-/* Assuming 1-1 user-enduser chat room */
+// when the recent sender is the current user, uses another enduser/user
+  // can use a separate field, like title, instead
 const resolve_chat_room_name = (room: ChatRoom, displayInfo: { [index: string]: UserDisplayInfo }, userType: SessionType, currentUserId: string) => {
   if (room.recentSender !== currentUserId) {
     return user_display_name(displayInfo[room.recentSender ?? ''])
@@ -175,7 +178,6 @@ const resolve_chat_room_name = (room: ChatRoom, displayInfo: { [index: string]: 
     return user_display_name(displayInfo[room?.enduserIds?.[0] ?? room.creator ?? ''])
   }
   if (userType === 'enduser') {
-    console.log(room.recentSender, room.creator, displayInfo[room.creator])
     return user_display_name(displayInfo[room?.userIds?.[0] ?? room.creator ?? ''])
   }
   return ''
